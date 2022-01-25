@@ -11,6 +11,7 @@
 - Cloud config for configuration server
 - Eureka client
 - Lombok for bean methods
+- Zipkin Server
 
 #. User Service
 - Rest Service which list all users with departments
@@ -20,6 +21,7 @@
 - Cloud Config for Configuration Server
 - Eureka client
 - Lombok for bean methods
+- Zipkin Server
 
 #. Gateway Server 
 - Eureka client
