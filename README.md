@@ -29,3 +29,9 @@
 #. Config Server
 - Eureka client
 - Cloud Config for Configuration Server
+
+# Spring Boot
+- Rest Service
+- Dev Tools
+- Actuator
+- Spring Profiling
