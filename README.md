@@ -12,6 +12,7 @@
 - Eureka client
 - Lombok for bean methods
 - Zipkin Server
+- Slf4j Logging
 
 #. User Service
 - Rest Service which list all users with departments
@@ -22,6 +23,7 @@
 - Eureka client
 - Lombok for bean methods
 - Zipkin Server
+- Slf4j Logging
 
 #. Gateway Server 
 - Eureka client
