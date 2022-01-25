@@ -1,0 +1,45 @@
+server:
+  port: 8765
+    
+spring:
+  config:
+    import: optional:configserver:bootstrap.yml
+  application:
+    name: gateway-service
+  profiles:
+    active:
+    - localhost  
+  cloud:
+    gateway:
+      routes:
+      - id: spring-reactive-web-service
+        uri: lb://spring-reactive-web-service # http://localhost:1001/spring-reactive-web-service
+        predicates:
+        - Path=/greet/**
+      - id: spring-reactive-web-service-intercommunication
+        uri: lb://spring-reactive-web-service-intercommunication # http://localhost:1002/spring-reactive-web-service-intercommunication
+        predicates:
+        - Path=/welcome/**
+      - id: user-service
+        uri: lb://user-service # http://localhost:9002/user-service
+        predicates:
+        - Path=/users/** 
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: user-service
+            fallbackUri: forward:/fallback
+      - id: department-service
+        uri: lb://department-service # http://localhost:9001/department-service
+        predicates:
+        - Path=/departments/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: department-service
+            fallbackUri: forward:/fallback   
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true

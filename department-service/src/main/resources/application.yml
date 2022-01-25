@@ -1,0 +1,13 @@
+server:
+  port: 9001
+  
+spring:
+  application:
+    name: department-service
+  profiles:
+    active:
+    - localhost  
+  zipkin:
+    base-url: http://localhost:9411/
+  config:
+    import: optional:configserver:bootstrap.yml
