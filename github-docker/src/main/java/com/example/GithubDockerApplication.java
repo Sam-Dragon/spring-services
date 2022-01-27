@@ -11,7 +11,7 @@ public class GithubDockerApplication {
 
 	@GetMapping
 	public String method() {
-		return "Welcome To Java World Of Miseries..!!!";
+		return "Welcome To Java World Of Miseries.!!";
 	}
 	
 	public static void main(String[] args) {
