@@ -24,6 +24,7 @@
 - Lombok for bean methods
 - Zipkin Server
 - Slf4j Logging
+- Kafka Producer
 
 #. Gateway Server 
 - Eureka client
@@ -33,6 +34,9 @@
 #. Config Server
 - Eureka client
 - Cloud Config for Configuration Server
+
+#. email-service
+- Kafka Consumer
 
 # Spring Boot
 - Rest Service
