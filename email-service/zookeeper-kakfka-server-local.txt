@@ -1,0 +1,5 @@
+# Locally - NOT WORKING
+
+docker run --network app-network --name zookeeper -dp 2181:2181 wurstmeister/zookeeper 
+docker run --network app-network -dp 9042:9042 -e KAFKA_ADVERTISED_HOST_NAME=localhost -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_CREATE_TOPIC="message-topic:1:3" wurstmeister/kafka 
+      

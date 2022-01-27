@@ -1,0 +1,19 @@
+# Use root/example as user/password credentials
+version: '3'
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - 2181:2181
+    container_name: zookeeper
+  
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - 9042:9042
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPIC: "message-topic:1:3"
+      
